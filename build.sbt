@@ -16,6 +16,8 @@ lazy val todobackend = (project in file("todobackend"))
       circeCore,
       circeGeneric,
       circeParser,
+      finch,
+      finchCirce,
       "com.twitter" %% "finagle-http" % "18.6.0"
     )
   )

@@ -1,4 +1,4 @@
-package todofinagle.todobackend
+package todofinch.todobackend
 
 import com.twitter.finagle.{Service, SimpleFilter}
 import com.twitter.util.{Duration, Future, Timer}

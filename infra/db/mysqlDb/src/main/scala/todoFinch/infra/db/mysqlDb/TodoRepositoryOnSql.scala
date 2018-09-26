@@ -1,4 +1,4 @@
-package todofinagle.infra.db.mysqlDb
+package todofinch.infra.db.mysqlDb
 
 import scalikejdbc._
 import scalikejdbc.config._

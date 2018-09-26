@@ -1,4 +1,4 @@
-package todofinagle.todobackend
+package todofinch.todobackend
 
 import java.util.UUID
 import com.twitter.finagle.{Http, Service, http}
