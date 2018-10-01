@@ -1,16 +1,25 @@
 package todofinch.todobackend
 
 import io.finch._
+import io.finch.circe._
+import io.circe.generic.auto._
 import com.twitter.finagle.Http
+import com.twitter.finagle.http.Response
+import todofinagle.model.Todo
 import todofinagle.infra.db.mysqlDb.TodoRepositoryOnSql
 
 class TodoEndpoint(url: String) {
   private[this] val root = path("todos")
 
   val todoRepo = new TodoRepositoryOnSql()
-  
-  val getTodosEndpoint: Endpoint[List[Todo]] = get(root) {
-    todoRepo.getAllTodos().map(Ok)
+
+  def genResponse(){
+    val res = Response()
+    res.setContentType("application/xml")
   }
-  val todoEndpoint = getTodosEndpoint.map
+  
+  val getTodosEndpoint: Endpoint[Seq[Todo]] = get("todos") {
+    Ok(todoRepo.getAllTodos)
+  }
+  def apply(url:String) = getTodosEndpoint
 }
