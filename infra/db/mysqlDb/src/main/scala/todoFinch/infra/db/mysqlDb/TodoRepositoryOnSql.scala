@@ -2,7 +2,7 @@ package todofinch.infra.db.mysqlDb
 
 import scalikejdbc._
 import scalikejdbc.config._
-import todofinagle.model.Todo
+import todofinch.model.Todo
 
 // DB にアクセスして Todo のリストを返す実装
 

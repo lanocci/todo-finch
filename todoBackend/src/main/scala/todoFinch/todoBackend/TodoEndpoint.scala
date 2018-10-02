@@ -1,12 +1,13 @@
 package todofinch.todobackend
 
 import io.finch._
+import io.finch.syntax._
 import io.finch.circe._
 import io.circe.generic.auto._
 import com.twitter.finagle.Http
 import com.twitter.finagle.http.Response
-import todofinagle.model.Todo
-import todofinagle.infra.db.mysqlDb.TodoRepositoryOnSql
+import todofinch.model.Todo
+import todofinch.infra.db.mysqlDb.TodoRepositoryOnSql
 
 class TodoEndpoint(url: String) {
   private[this] val root = path("todos")
