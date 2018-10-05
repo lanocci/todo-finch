@@ -20,6 +20,8 @@ class TodoEndpoint(url: String) {
   }
   
   val getTodosEndpoint: Endpoint[Seq[Todo]] = get("todos") {
+    val res = todoRepo.getAllTodos
+    println(res)
     Ok(todoRepo.getAllTodos)
   }
   def apply(url:String) = getTodosEndpoint

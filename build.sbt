@@ -35,6 +35,9 @@ lazy val model = (project in file("model"))
     name := "model",
     libraryDependencies ++= Seq(
       scalaTest % Test,
+      circeCore,
+      circeGeneric,
+      circeParser,
       "com.twitter" %% "finagle-http" % "18.6.0",
     )
   )
